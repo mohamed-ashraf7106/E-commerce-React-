@@ -38,7 +38,7 @@ function ViewProduct() {
         );
       }
     } else {
-      navigation("/login");
+      navigation("/E-commerce-React-/login");
     }
   }
   useEffect(() => {
