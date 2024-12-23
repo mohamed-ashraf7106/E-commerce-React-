@@ -1,0 +1,21 @@
+.swiper-button-next:after, 
+.swiper-button-prev:after {
+  color: black;
+}
+.swiper-pagination-bullet-active{
+  background-color: black;
+}
+.swiper-wrapper{
+  align-items: center;
+}
+.productTitle{
+  font-size: clamp(20px,6vw,50px);;
+}
+.ticket::after{
+  position: absolute;
+  content: "";
+  transform: translateX(50%) rotateZ(45deg);
+  background-color: white;
+  height: 20px;
+  width: 20px;
+}
