@@ -14,7 +14,7 @@ function App() {
         <div className="w-128 px-4"></div>
       </div>
       <Routes>
-        <Route path="/" element={<HomePage />} />
+        <Route path="/E-commerce-React-/" element={<HomePage />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/login" element={<Login />} />
         <Route path="/category" element={<HomePage/>}>
