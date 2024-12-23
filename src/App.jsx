@@ -15,13 +15,13 @@ function App() {
       </div>
       <Routes>
         <Route path="/E-commerce-React-/" element={<HomePage />} />
-        <Route path="/E-commerce-React-/cart" element={<Cart />} />
-        <Route path="/E-commerce-React-/login" element={<Login />} />
-        <Route path="/E-commerce-React-/category" element={<HomePage/>}>
-          <Route path="/E-commerce-React-/category/:product" element={<HomePage/>} />
+        <Route path="/cart" element={<Cart />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/category" element={<HomePage/>}>
+          <Route path="/category/:product" element={<HomePage/>} />
         </Route>
-        <Route path="/E-commerce-React-/search" element={<SearchResults />} />
-        <Route path="/E-commerce-React-/:id" element={<ViewProduct />} />
+        <Route path="/search" element={<SearchResults />} />
+        <Route path="/:id" element={<ViewProduct />} />
       </Routes>
     </>
   );

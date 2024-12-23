@@ -80,7 +80,7 @@ function HeaderCatregory() {
           {categories.map((e) => {
             return (
               <Link
-              to={`/E-commerce-React-/category/${e.slug}`}
+              to={`/category/${e.slug}`}
                 key={e.name}
                 className="min-w-fit py-2 select-none"
               >
