@@ -16,7 +16,7 @@ function Login() {
   let [userError, setUserError] = useState("");
   let [passError, setPassError] = useState("");  
   if(localStorage.getItem("login")==="true"){
-    navigation("/E-commerce-React-/")
+    navigation("/")
   }
   function handleSubmit(e) {
     e.preventDefault();
@@ -27,7 +27,7 @@ function Login() {
       setPassError("must be more than 8 charachter");
     }else{
       dispatch(login(true))
-      navigation("/E-commerce-React-/")
+      navigation("/")
     }
   }
   return (

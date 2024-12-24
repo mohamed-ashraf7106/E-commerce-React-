@@ -35,7 +35,7 @@ function Product({ data }) {
         </span>
       )}
         <Link
-          to={`/E-commerce-React-/${data.id}`}
+          to={`/${data.id}`}
           className=" p-2 bg-blue-600 mx-auto hover:bg-blue-700 text-white w-fit rounded text-center "
         >
           <button>View product</button>

@@ -11,7 +11,7 @@ function Header() {
   const dispatch = useDispatch();
   const handleSearchSubmit = (e) => {
     e.preventDefault();
-    navigate(`/E-commerce-React-/search?query=${search}`);
+    navigate(`/search?query=${search}`);
   };
 
   return (
@@ -19,7 +19,7 @@ function Header() {
       <div className="flex justify-center bg-shop ">
         <div className="p-2 max-w-128 w-full">
           <div className="flex gap-1 items-center justify-between">
-            <Link to="/E-commerce-React-">
+            <Link to="/">
               <div className="text-3xl logo font-bold">SwiftCart</div>
             </Link>
             <form
@@ -44,19 +44,19 @@ function Header() {
                       className="min-w-fit"
                       onClick={() => {
                         dispatch(login(false));
-                        navigate("/E-commerce-React-/login");
+                        navigate("/login");
                       }}
                     >
                       sign out
                     </button>
-                    <Link className="flex gap-3" to="/E-commerce-React-/cart">
+                    <Link className="flex gap-3" to="/cart">
                       <li>
                         <i className="fa-solid fa-cart-shopping"></i>
                       </li>
                     </Link>
                   </>
                 ) : (
-                  <Link to="/E-commerce-React-/login">
+                  <Link to="/login">
                     <li className="flex gap-2 items-center">
                       <i className="fa-solid fa-user"></i>
                       <span className="font-bold">Login</span>
