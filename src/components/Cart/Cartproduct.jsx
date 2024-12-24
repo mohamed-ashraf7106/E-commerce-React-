@@ -5,9 +5,9 @@ import { useDispatch } from "react-redux";
 function Cartproduct({ quantity, id }) {
   let [mydata, setdata] = useState({});
   let [loaded, setLoaded] = useState(false);
-  let dispatch = useDispatch()
+  let dispatch = useDispatch();
   function handleDeleteItem() {
-    dispatch(removeProduct(id))
+    dispatch(removeProduct(id));
   }
   useEffect(() => {
     const fetchData = async () => {
@@ -25,9 +25,21 @@ function Cartproduct({ quantity, id }) {
           <div className="flex font-bold border py-2 flex-col justify-center items-center">
             <h3>{mydata.title}</h3>
             <p>
-              {((100 - mydata.discountPercentage) * mydata.price /100 ).toFixed(2)} * {quantity} = {(quantity * mydata.price).toFixed(2)}$
+              {(
+                ((100 - mydata.discountPercentage) * mydata.price) /
+                100
+              ).toFixed(2)}{" "}
+              * {quantity} ={" "}
+              {(
+                quantity *
+                (((100 - mydata.discountPercentage) * mydata.price) / 100)
+              ).toFixed(2)}
+              $
             </p>
-            <button onClick={handleDeleteItem} className="bg-red-600 hover:bg-red-700 py-2 text-white px-4 rounded ">
+            <button
+              onClick={handleDeleteItem}
+              className="bg-red-600 hover:bg-red-700 py-2 text-white px-4 rounded "
+            >
               Remove from cart
             </button>
           </div>
