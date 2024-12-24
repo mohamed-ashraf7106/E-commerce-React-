@@ -9,7 +9,7 @@ function Cart() {
   let logedIn = useSelector((state) => state.logstatus);
   let navigation = useNavigate();
   if (!logedIn) {
-    navigation("/login");
+    navigation("/E-commerce-React-/login");
   }
   if (data.length == 0) {
     return<p className="text-center"> empty cart</p>
