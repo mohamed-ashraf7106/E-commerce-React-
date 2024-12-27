@@ -45,6 +45,7 @@ function Cartproduct({ quantity, id }) {
           </div>
           <div className="max-h-64">
             <img
+            loading="lazy"
               className="h-full w-full object-contain"
               src={mydata.images[0]}
               alt=""

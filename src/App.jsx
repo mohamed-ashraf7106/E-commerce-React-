@@ -1,29 +1,28 @@
 import "./App.css";
+import { Suspense, lazy } from "react";
 import Header from "./components/Header/Header";
-import ViewProduct from "./pages/ViewProduct";
-import HomePage from "./pages/HomePage";
 import Login from "./pages/Login";
 import SearchResults from "./pages/SearchResults";
 import { Route, Routes } from "react-router-dom";
 import Cart from "./pages/Cart";
+import Loading from "./components/Loading";
+const HomePage = lazy(() => import("./pages/HomePage"));
+const ViewProduct = lazy(() => import("./pages/ViewProduct"));
 function App() {
   return (
-    <>
+    <Suspense fallback={<Loading />}>
       <Header />
-      <div className="flex justify-center">
-        <div className="w-128 px-4"></div>
-      </div>
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/category" element={<HomePage/>}>
-          <Route path="/category/:product" element={<HomePage/>} />
+        <Route path="/category" element={<HomePage />}>
+          <Route path="/category/:product" element={<HomePage />} />
         </Route>
         <Route path="/search" element={<SearchResults />} />
         <Route path="/:id" element={<ViewProduct />} />
       </Routes>
-    </>
+    </Suspense>
   );
 }
 

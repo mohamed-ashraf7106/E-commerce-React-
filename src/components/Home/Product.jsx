@@ -15,7 +15,7 @@ function Product({ data }) {
       <div className=" flex justify-center h-60">
         {" "}
         {loaded ? (
-          <img className="max-h-full h-56 object-cover" src={data.images[0]} alt="" />
+          <img loading="lazy" className="max-h-full h-56 object-cover" src={data.images[0]} alt="" />
         ) : (
           <Loading />
         )}

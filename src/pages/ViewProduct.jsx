@@ -102,7 +102,7 @@ function ViewProduct() {
                   className="flex relative items-center justify-center"
                   key={e}
                 >
-                  <img src={e} alt="" />
+                  <img loading="lazy" src={e} alt="" />
                 </SwiperSlide>
               ))}
               <span
