@@ -16,7 +16,7 @@ function Product({ data, index }) {
         {loaded ? (
           <img
             loading={index < 8 ? "preload" : "lazy"}
-            className="max-h-full h-56 object-cover"
+            className="max-h-full h-56 max-w-full object-cover"
             src={data.images[0]}
             alt={data.title}
           />
