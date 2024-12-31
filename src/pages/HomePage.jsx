@@ -63,10 +63,12 @@ function HomePage() {
     <p>No products found</p>
   );
   return (
-    <div className="flex justify-center items-center flex-col gap-2">
-      <div className="container max-w-128 w-full relative">{myDisplay}</div>
+    <>
+    {/*<div className="flex justify-center items-center flex-col gap-2">*/}
+      <div className="container max-w-128 mx-auto relative">{myDisplay}</div>
       <Pagination pages={totalPages} setCurrentPage={setCurrentPage} />
-    </div>
+    {/* </div> */}
+    </>
   );
 }
 
