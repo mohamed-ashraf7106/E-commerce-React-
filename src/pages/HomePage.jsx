@@ -41,33 +41,36 @@ function HomePage() {
   //     <Pagination pages={pages} setCurrentPage={setCurrentPage} />
   //   </div>
   // );
-  const  category = useParams();
-  const [currentPage, setCurrentPage] = useState(0);  
+  const category = useParams();
+  const [currentPage, setCurrentPage] = useState(0);
   useEffect(() => {
     if (Object.keys(category).length > 0) {
-      setCurrentPage(0)
+      setCurrentPage(0);
     }
   }, [category]);
-  const url = Object.keys(category).length > 0
-    ? `https://dummyjson.com/products/category/${category.product}?`
-    : "https://dummyjson.com/products";
-    const { data, loading, error, totalPages } = useFetchData(url, currentPage);
-  
-    let myDisplay = loading ? (
-    <Loading />
+  const url =
+    Object.keys(category).length > 0
+      ? `https://dummyjson.com/products/category/${category.product}?`
+      : "https://dummyjson.com/products";
+  const { data, loading, error, totalPages } = useFetchData(url, currentPage);
+
+  let myDisplay = loading ? (
+      <Loading />
   ) : error ? (
     <p>{error}</p>
   ) : data.length > 0 ? (
-    data.map((product ,index) => <Product key={product.id} data={product} index={index} />)
+    data.map((product, index) => (
+      <Product key={product.id} data={product} index={index} />
+    ))
   ) : (
     <p>No products found</p>
   );
   return (
     <>
-    {/*<div className="flex justify-center items-center flex-col gap-2">*/}
+      {/*<div className="flex justify-center items-center flex-col gap-2">*/}
       <div className="container max-w-128 mx-auto relative">{myDisplay}</div>
       <Pagination pages={totalPages} setCurrentPage={setCurrentPage} />
-    {/* </div> */}
+      {/* </div> */}
     </>
   );
 }
