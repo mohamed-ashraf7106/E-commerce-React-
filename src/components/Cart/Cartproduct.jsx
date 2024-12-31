@@ -48,7 +48,7 @@ function Cartproduct({ quantity, id }) {
             loading="lazy"
               className="h-full w-full object-contain"
               src={mydata.images[0]}
-              alt=""
+              alt={`product-${mydata.title}`}
             />
           </div>
         </div>

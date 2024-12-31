@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import Loading from "../Loading";
 import "./product.css";
 import { Link } from "react-router-dom";
-function Product({ data }) {
+function Product({ data, index }) {
   let [loaded, setloaded] = useState(false);
   useEffect(() => {
     const img = new Image();
@@ -13,9 +13,13 @@ function Product({ data }) {
   return (
     <div className="h-90 border relative pb-1 flex flex-col justify-between gap-1">
       <div className=" flex justify-center h-60">
-        {" "}
         {loaded ? (
-          <img loading="lazy" className="max-h-full h-56 object-cover" src={data.images[0]} alt="" />
+          <img
+            loading={index < 8 ? "preload" : "lazy"}
+            className="max-h-full h-56 object-cover"
+            src={data.images[0]}
+            alt={data.title}
+          />
         ) : (
           <Loading />
         )}
@@ -34,12 +38,12 @@ function Product({ data }) {
           -{discount}%
         </span>
       )}
-        <Link
-          to={`/${data.id}`}
-          className=" p-2 bg-blue-600 mx-auto hover:bg-blue-700 text-white w-fit rounded text-center "
-        >
-          <button>View product</button>
-        </Link>
+      <Link
+        to={`/${data.id}`}
+        className=" p-2 bg-blue-600 mx-auto hover:bg-blue-700 text-white w-fit rounded text-center "
+      >
+        <button>View product</button>
+      </Link>
     </div>
   );
 }

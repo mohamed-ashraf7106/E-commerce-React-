@@ -52,9 +52,9 @@ function HeaderCatregory() {
           onClick={() => {
             handleClick("left");
           }}
-          className="absolute  z-50 shadow-hard-blur-white bg-white/90  left-2 border rounded-full w-8 h-8 top-1/2 -translate-y-1/2"
+          className="absolute flex items-center justify-center  z-50 shadow-hard-blur-white bg-white/90  left-2 border rounded-full w-8 h-8 top-1/2 -translate-y-1/2"
         >
-          <i className="fa-solid fa-angle-left"></i>
+        <img className="w-3" src="./left.svg" alt="" />
         </button>
         <ul
           onMouseDown={(e) => {
@@ -93,9 +93,9 @@ function HeaderCatregory() {
           onClick={() => {
             handleClick("right");
           }}
-          className="absolute z-50 shadow-hard-blur-white bg-white/90 right-2 border rounded-full w-8 h-8 top-1/2 -translate-y-1/2"
+          className="absolute flex items-center justify-center z-50 shadow-hard-blur-white bg-white/90 right-2 border rounded-full w-8 h-8 top-1/2 -translate-y-1/2"
         >
-          <i className="fa-solid fa-angle-right"></i>
+         <img className="w-3" src="./right.svg" alt="" />
         </button>
       </div>
     </div>

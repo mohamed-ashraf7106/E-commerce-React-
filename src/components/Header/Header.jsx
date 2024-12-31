@@ -33,7 +33,7 @@ function Header() {
                 onChange={(e) => setSearch(e.target.value)}
               />
               <button type="submit">
-                <i className="fa-solid absolute top-1/2 right-2 -translate-y-1/2 fa-magnifying-glass"></i>
+              <img className="absolute w-5 top-1/2 right-2 -translate-y-1/2" src="./search.svg" alt="" />
               </button>
             </form>
             <div>
@@ -50,15 +50,14 @@ function Header() {
                       sign out
                     </button>
                     <Link className="flex gap-3" to="/cart">
-                      <li>
-                        <i className="fa-solid fa-cart-shopping"></i>
+                      <li className="w-5">
+                        <img className="w-full" src="./cart.svg" alt="" />
                       </li>
                     </Link>
                   </>
                 ) : (
                   <Link to="/login">
                     <li className="flex gap-2 items-center">
-                      <i className="fa-solid fa-user"></i>
                       <span className="font-bold">Login</span>
                     </li>
                   </Link>
